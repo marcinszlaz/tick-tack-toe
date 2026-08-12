@@ -1,6 +1,8 @@
 import os
 import time
 from template_rejuvenation import RejuvenatesTemplate
+from checker import check_who_win
+
 
 def clear_screen():
     os.system('cls' if os.name=='nt' else 'clear')
@@ -30,6 +32,10 @@ game_board_ft = ("\n"
 " 2{a2}|{b2}|{c2}\n"
 "  ---|---|---\n"
 " 3{a3}|{b3}|{c3}\n")
+
+# set_x, set_y
+set_x = (' X ', ' X ', ' X ')
+set_y = (' O ', ' O ', ' O ')
 
 clear_screen()
 print(f"Welcome in Tic-Tac-Toe game \n"
@@ -61,6 +67,8 @@ while user_choose != 'quit':
             d[user_choose] = ' X '
         clear_screen()
         print(game_board_ft.format(**d))
+        (print("Player X wins!") if check_who_win(d, ' X ', False)
+         else print('',end=''))
     else:
         user_choose = input("Player `O` turn! \n")
         if user_choose not in d:
@@ -80,5 +88,8 @@ while user_choose != 'quit':
             d[user_choose] = ' O '
         clear_screen()
         print(rejuvenate)
+        (print("Player O wins!") if check_who_win(d, ' O ', False) 
+        else print('',end=''))
+
     init += 1
 

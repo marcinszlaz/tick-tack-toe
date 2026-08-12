@@ -7,4 +7,3 @@ class RejuvenatesTemplate:
     def __str__(self):
         return self.template.format(**self.dictionary)
 
-
