@@ -1,0 +1,4 @@
+MERGE BRANCHES! 
+Create one main with all three ways to handle problem
+with refresh template, nr.1) .format() nr.2) lambda:
+nr.3) OOP (overkillAlert!)

@@ -1,6 +1,6 @@
 import os
 import time
-
+from template_rejuvenation import RejuvenatesTemplate
 
 def clear_screen():
     os.system('cls' if os.name=='nt' else 'clear')
@@ -38,6 +38,7 @@ print(f"Welcome in Tic-Tac-Toe game \n"
 
 init = 0
 user_choose = 'no_quit!'
+rejuvenate = RejuvenatesTemplate(d, game_board_ft)
 while user_choose != 'quit':
     if init % 2 == 0:  
         user_choose = input("Player `X` turn! \n")
@@ -46,10 +47,7 @@ while user_choose != 'quit':
         user_choose = input("Player `Y` turn! \n")
         d[user_choose] = ' O '
     clear_screen()
-    print(game_board_ft.format(**d))
+    # print(game_board_ft.format(**d))
+    print(rejuvenate)
     init += 1
-
-
-
-
 
