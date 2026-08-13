@@ -31,6 +31,8 @@ dr1 = dict(a1=' _ ', a2=' _ ', a3=' _ ',
 
 set_d1t = set([dr1['a1'], dr1['b2'], dr1['c3']])
 set_d2t = set([dr1['a3'], dr1['b2'], dr1['c1']])
+tup_chars = ('a', 'b', 'c',)
+tup_digits = ('1', '2', '3',)
 
 def check_who_win(dct: dict, who: str, print_=True)->bool:
     """ arg1: dictionary with mapped x,o key names
@@ -43,8 +45,6 @@ def check_who_win(dct: dict, who: str, print_=True)->bool:
     set_d2 = set([dct['a3'], dct['b2'], dct['c1']])
     set_x = set([' X '])
     set_o = set([' O '])
-    tup_chars = ('a', 'b', 'c',)
-    tup_digits = ('1', '2', '3',)
     won = False
 
     for c in tup_chars:

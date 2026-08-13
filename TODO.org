@@ -11,4 +11,6 @@
 * TODO add question at the end, `do you wanna play again?`(this one is the most crucial for whole project xD)
 * TODO what's about no "Bye" while user_choose = "quit"? And unexpected "You can\'t do that!"
 * TODO maybe next version will have matrix (numpy) based win alghoritm, who knows xD
+* TODO handle x, o keys in dict d (line 11)
+* TODO write function clearing dict d to fabric values [a1-c3] = _
 <-------------------------------------------------------------->
