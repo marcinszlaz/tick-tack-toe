@@ -68,7 +68,7 @@ def check_who_win(dct: dict, who: str, print_=True)->bool:
         if (set_d1 == (set_x if who == ' X ' else
                         (set_o if who == ' O ' else set() ))):
             won = True
-        elif (set_d2 in (set_x if who == ' X ' else
+        elif (set_d2 == (set_x if who == ' X ' else
                         (set_o if who == ' O ' else set() ))):
             won = True
         else:
@@ -76,6 +76,16 @@ def check_who_win(dct: dict, who: str, print_=True)->bool:
 
     print(f"Did you win: {won}") if print_ else print(f"", end="") 
     return won
+
+def check_draw(d_: dict):
+    for c in tup_chars:
+        for d in tup_digits:
+            if d_[c+d] == ' _ ':
+                return False
+            else:
+               pass 
+    print("We\'ve draw!")
+    return True
 
 # For testing purposes only.
 if __name__ == "__main__":

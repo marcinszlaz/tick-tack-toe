@@ -1,16 +1,31 @@
 # __/\_TASKS_/\__ #
 <-------------------------------------------------------------->
+<2026-08-12 Wed>
 * DONE handle error with input other than a1-c3, quit,
 * DONE handle error with overwritten player X marks by player O marks and in reverse,
 * DONE handle error with overwritten player X by player X, same player O,
+
 <-------------------------------------------------------------->
+<2026-08-13 Thu>
 * DONE handle win alghoritm, or other pattern xD,
 * DONE we have serious issue with sets xD
 * DONE add players score :-)
+
 <-------------------------------------------------------------->
-* TODO add question at the end, `do you wanna play again?`(this one is the most crucial for whole project xD)
-* TODO what's about no "Bye" while user_choose = "quit"? And unexpected "You can\'t do that!"
-* TODO maybe next version will have matrix (numpy) based win alghoritm, who knows xD
-* TODO handle x, o keys in dict d (line 11)
-* TODO write function clearing dict d to fabric values [a1-c3] = _
+<2026-08-14 Fri>
+* DONE add question at the end/after win, `do you wanna play again?`
+  (this one is the most crucial for whole project xD)
+* DONE write function clearing dict d to fabric values [a1-c3] = _
+* DONE How to detect draw state? Detected!
+* DONE why a3,b2,c1 combination not winning? - operator set() == set()
+  and operator set() in set() aren't the same, == are both equal?
+  x in y, is x in y, i set() case, you have to use nested sets, s = {{'x'}}
+  isn't possible, you have to use frozenset('x'), mysterious riddle was solved
 <-------------------------------------------------------------->
+
+<2026-08-15 Sat>
+* TODO what's about no "Bye" while user_choose = "quit"? And unexpected "You can\'t do that!", problem escalated!
+* TODO handle x, o keys in dict d (line 11), why those chars triggers `You can't do that!` instead of `Wrong input!`
+
+<-------------------------------------------------------------->
+DEADLINE: <2026-08-16 Sun>

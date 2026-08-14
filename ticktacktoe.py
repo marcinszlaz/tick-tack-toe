@@ -1,7 +1,8 @@
 import os
 import time
 from template_rejuvenation import RejuvenatesTemplate
-from checker import check_who_win, tup_chars, tup_digits
+from checker import (check_who_win, tup_chars, tup_digits,
+                     check_draw)
 
 
 def clear_screen():
@@ -91,7 +92,14 @@ def main():
                     time.sleep(0.5)
                     user_choose = 'quit'
             else:
-                print(f"", end='')
+                if check_draw(d):
+                    _ = input("Again? (y/n)")
+                    if _.lower() == 'y':
+                        clear_dict(d)
+                        clear_screen()
+                        print(rejuvenate)
+                        main()
+                        print(f"", end='')
         else:
             user_choose = input("Player `O` turn! \n")
             if user_choose not in d:
@@ -123,6 +131,13 @@ def main():
                     time.sleep(0.5)
                     user_choose = 'quit'
             else:
-                print(f"", end='')
+                if check_draw(d):
+                    _ = input("Again? (y/n)")
+                    if _.lower() == 'y':
+                        clear_dict(d)
+                        clear_screen()
+                        print(rejuvenate)
+                        main()
+                        print(f"", end='')
         init += 1
 main()
