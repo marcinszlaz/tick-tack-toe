@@ -24,8 +24,15 @@
 <-------------------------------------------------------------->
 
 <2026-08-15 Sat>
-* TODO what's about no "Bye" while user_choose = "quit"? And unexpected "You can\'t do that!", problem escalated!
-* TODO handle x, o keys in dict d (line 11), why those chars triggers `You can't do that!` instead of `Wrong input!`
-
+* DONE what's about no "Bye" while user_choose = "quit"? And unexpected "You can\'t do that!", problem escalated!
+  as usual, it was error in if/else logic, do not overengineering, keep it simple stupid!
+* DONE handle x, o keys in dict d (line 11), why those chars triggers `You can't do that!` instead of `Wrong input!`
+* DONE solve problem with quit after win/lose/draw situation decision quit y/n
+  this is very interesting, because it's about references to main() in stack
+  if you run first time, you have reference on stack to first main,
+  but after first recurence call to main() you have second references at stack,
+  after that third, fourth etc. In Python, you can't manipulate references at stack
+  You have only one way to handle with this issue (one architecture in language
+  to maintain this problem). 
 <-------------------------------------------------------------->
-DEADLINE: <2026-08-16 Sun>
+DEADLINE: <2026-08-16 Sun> :-)

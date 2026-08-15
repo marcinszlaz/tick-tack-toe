@@ -89,4 +89,4 @@ def check_draw(d_: dict):
 
 # For testing purposes only.
 if __name__ == "__main__":
-    vertical(d_o, ' O ')
+    check_who_win(d_o, ' O ')

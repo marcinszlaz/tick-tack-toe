@@ -1,6 +1,6 @@
 import os
 import time
-from template_rejuvenation import RejuvenatesTemplate
+from template_rejuvenation import RejuvenatesTemplate, Exit
 from checker import (check_who_win, tup_chars, tup_digits,
                      check_draw)
 
@@ -64,11 +64,13 @@ def main():
         if init % 2 == 0:  
             user_choose = input("Player `X` turn! \n")
             if user_choose not in d:
-                if user_choose == 'quit':
-                    print("Bye")
-                    break
                 print("Wrong input!")
                 continue
+            elif user_choose in ['x', 'o']:
+                print("Wrong input!")
+                continue
+            elif user_choose == 'quit':
+                raise Exit() 
             if d[user_choose] == ' _ ':
                 d[user_choose] = ' X '
             elif d[user_choose] == ' O ' or ' X ':
@@ -88,9 +90,7 @@ def main():
                     print(rejuvenate)
                     main()
                 else:
-                    print("Bye!")
-                    time.sleep(0.5)
-                    user_choose = 'quit'
+                    raise Exit()
             else:
                 if check_draw(d):
                     _ = input("Again? (y/n)")
@@ -99,13 +99,16 @@ def main():
                         clear_screen()
                         print(rejuvenate)
                         main()
-                        print(f"", end='')
+                    else:
+                        raise Exit()
         else:
             user_choose = input("Player `O` turn! \n")
             if user_choose not in d:
-                if user_choose == 'quit':
-                    print("Bye")
-                    break
+                print("Wrong input!")
+                continue
+            elif user_choose == 'quit':
+                raise Exit()
+            elif user_choose in ['x', 'o']:
                 print("Wrong input!")
                 continue
             if d[user_choose] == ' _ ':
@@ -127,9 +130,7 @@ def main():
                     print(rejuvenate)
                     main()
                 else:
-                    print("Bye!")
-                    time.sleep(0.5)
-                    user_choose = 'quit'
+                    raise Exit()
             else:
                 if check_draw(d):
                     _ = input("Again? (y/n)")
@@ -138,6 +139,12 @@ def main():
                         clear_screen()
                         print(rejuvenate)
                         main()
-                        print(f"", end='')
+                    else:
+                        raise Exit()
         init += 1
-main()
+
+try:
+    main()
+except Exit:
+    print("See\'ya later Aligator!")
+    
